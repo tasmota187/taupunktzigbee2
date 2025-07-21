@@ -6,6 +6,11 @@
 #define EP 10
 #define TAU_THRESH 12.0
 
+extern void start_webserver();
+extern void web_update_sensorwerte(float t1, float rh1, float t2, float rh2, float dp);
+extern bool web_luefter_status();
+
+
 static uint16_t dest_addr=0; static uint8_t dest_ep=0;
 
 void zb_signal_handler(esp_zb_app_signal_t *sig){
