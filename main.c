@@ -36,6 +36,19 @@ void app_main(){
       float dp=fminf(calc_taupunkt(T1,RH1), calc_taupunkt(T2,RH2));
       display_update(dp);
 
+// Sensorwerte → Webinterface
+web_update_sensorwerte(T1, RH1, T2, RH2, dp);
+
+// Nur wenn Zigbee nicht aktiv → SoftAP Steuerung verwenden
+if (!zigbee_aktiv) {
+    if (web_luefter_status()) {
+        // Relais-Pin aktivieren (oder LED/Lüfter)
+    } else {
+        // Relais deaktivieren
+    }
+}
+
+      
       esp_zb_zcl_on_off_cmd_req_t req = {
         .address_mode = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT,
         .dst_addr.short_addr = dest_addr, .dst_endpoint = dest_ep,
