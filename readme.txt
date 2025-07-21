@@ -68,3 +68,9 @@ OLED-Textanzeige (display_update()) anpassen
 Speicherung der Zigbee-Geräteadresse in NVS
 Hysterese für An/Aus
 OTA-Update oder Webinterface für Konfiguration
+
+WLAN‑Hotspot Taupunkt-Setup
+Webinterface auf http://192.168.4.1:
+Zeigt: Temperatur, Feuchte beider Sensoren + Taupunkt
+Schaltet Lüfter manuell über Button
+Alles fallback-sicher, wenn Zigbee nicht erreichbar ist
